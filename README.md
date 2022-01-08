@@ -1,5 +1,5 @@
 # ps5-esp32
-Use a ps5 controller with an ESP32. Note: Only controller inputs have been tested. Other functions like rumble or lights might not work, but could be implemented using the 'ps5ViewIncomingBits.ino' example.
+Use a ps5 controller with an ESP32.
 
 This is heavily based on the work of Jeffery Pernis to connect a PS3 controller to an ESP32, and the PS4-esp32 library. 
 
@@ -42,3 +42,5 @@ void setup()
 ```
 
 **TLDR:** Connect ps5 controller with phone through bluetooth. Get phone's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your phones bluetooh MAC. Same can be done with your ps5 console if more convenient.
+##
+**Note: Only controller inputs have been tested. Other functions like rumble or lights might not work, but could be implemented using the 'ps5ViewIncomingBits.ino' example.**
