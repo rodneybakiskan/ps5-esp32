@@ -1,9 +1,10 @@
 # ps5-esp32
 Use a ps5 controller with an ESP32
 
-This is heavily based on the work of Jeffery Pernis to connect a PS3 controller to an ESP32, and the PS4-esp32 library.
-You can find both here: 
+This is heavily based on the work of Jeffery Pernis to connect a PS3 controller to an ESP32, and the PS4-esp32 library. 
+
 PS3 controller: https://github.com/jvpernis/esp32-ps3
+
 PS4 controller: https://github.com/aed3/PS4-esp32
 
 [Here's a video](https://youtu.be/BmlKBs27pgE) about how the ps4 library was made.
