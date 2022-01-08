@@ -1,5 +1,5 @@
 # ps5-esp32
-Use a ps5 controller with an ESP32
+Use a ps5 controller with an ESP32. Note: Only controller inputs have been tested. Other functions like rumble or lights might not work, but could be implemented using the 'ps5ViewIncomingBits.ino' example.
 
 This is heavily based on the work of Jeffery Pernis to connect a PS3 controller to an ESP32, and the PS4-esp32 library. 
 
