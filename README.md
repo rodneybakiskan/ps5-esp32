@@ -40,4 +40,4 @@ void setup()
 }
 ```
 
-TLDR: Connect ps5 controller with phone through bluetooth. Get phone's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your phones bluetooh MAC. Same can be done with your ps5 console if more convenient.
+**TLDR**: Connect ps5 controller with phone through bluetooth. Get phone's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your phones bluetooh MAC. Same can be done with your ps5 console if more convenient.
