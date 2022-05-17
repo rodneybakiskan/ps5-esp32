@@ -43,4 +43,4 @@ void setup()
 
 **TLDR:** Connect ps5 controller with phone through bluetooth. Get phone's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your phones bluetooh MAC. Same can be done with your ps5 console if more convenient.
 ##
-**Note: Only controller inputs have been tested. Other functions like rumble or lights might not work, but could be implemented using the 'ps5ViewIncomingBits.ino' example.**
+**Note: Only buttons and analog inputs have been tested. Other functions like rumble/lights/IMU might not work, but could possibly be implemented using the 'ps5ViewIncomingBits.ino' example.**
