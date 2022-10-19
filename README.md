@@ -23,7 +23,12 @@ The instructions on how to do this are base off what can be found [here](https:/
 1. To install this library into your Arduino IDE:
     1. Click on the "Code" button in the top right of this page
     1. Select "Download Zip" (It's always a good idea to look through the code on this page first to make sure you know what you're downloading)
-    1. In the Arduino IDE, navigate to `Sketch -> Include Library -> Add .ZIP Library`, then select the file you just downloaded 
+    1. In the Arduino IDE, navigate to `Sketch -> Include Library -> Add .ZIP Library`, then select the file you just downloaded
+
+```diff
+-_If you get a compilation error similar to too few arguments to function 'esp_bt_gap_set_scan_mode'. 
+-Remove the comments in line 86-90 in file ps5_spp.c. This changes based on ESP-IDF version compatibility._
+```
 
 ## Pairing the ps5 Controller:
 When a ps5 controller is 'paired' to a ps5 console, it just means that it has stored the console's Bluetooth MAC address, which is the only device the controller will connect to. Usually, this pairing happens when you connect the controller to the ps5 console using a USB cable, and press the PS button. This initiates writing the console's MAC address to the controller.
