@@ -81,14 +81,11 @@ void sppInit() {
 static void sppCallback(esp_spp_cb_event_t event, esp_spp_cb_param_t* param) {
   if (event == ESP_SPP_INIT_EVT) {
     ESP_LOGI(ps5_TAG, "ESP_SPP_INIT_EVT");
-    esp_bt_dev_set_device_name("ESP Host");
 
 #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(4, 0, 0)
         esp_bt_gap_set_scan_mode(ESP_BT_CONNECTABLE, ESP_BT_NON_DISCOVERABLE);
 #else
         esp_bt_gap_set_scan_mode(ESP_BT_SCAN_MODE_CONNECTABLE);
 #endif
-
-    esp_spp_start_srv(ESP_SPP_SEC_NONE, ESP_SPP_ROLE_SLAVE, 0, "ESP SERVER");
   }
 }
