@@ -53,6 +53,7 @@ static const tL2CAP_APPL_INFO dyn_info = {
 static tL2CAP_CFG_INFO ps5_cfg_info;
 
 bool is_connected = false;
+static BD_ADDR g_bd_addr;
 uint16_t l2cap_control_channel = 0;
 uint16_t l2cap_interrupt_channel = 0;
 
@@ -87,6 +88,44 @@ void ps5_l2cap_init_services() {
 void ps5_l2cap_deinit_services() {
     ps5_l2cap_deinit_service("ps5-HIDC", BT_PSM_HID_CONTROL);
     ps5_l2cap_deinit_service("ps5-HIDI", BT_PSM_HID_INTERRUPT);
+}
+
+/*******************************************************************************
+**
+** Function         ps5_l2cap_connect
+**
+** Description      This function deinitialises the required L2CAP services.
+**
+** Returns          Result of connection reqiest
+**
+*******************************************************************************/
+long ps5_l2cap_connect(BD_ADDR addr) {
+    memmove(g_bd_addr, addr, sizeof(BD_ADDR));
+
+    return ps5_l2cap_reconnect();
+}
+
+/*******************************************************************************
+**
+** Function         ps5_l2cap_reconnect
+**
+** Description      This function deinitialises the required L2CAP services.
+**
+** Returns          Result of connection reqiest
+**
+*******************************************************************************/
+long ps5_l2cap_reconnect(void) {
+    long ret;
+    ret = L2CA_CONNECT_REQ(BT_PSM_HID_CONTROL, g_bd_addr, NULL, NULL);
+    ESP_LOGE(ps5_TAG, "L2CA_CONNECT_REQ ret=%d\n", ret);
+    if (ret == 0) {
+        return -1;
+    }
+    l2cap_control_channel = ret;
+
+    // is_connected = false;
+
+    return ret;
 }
 
 

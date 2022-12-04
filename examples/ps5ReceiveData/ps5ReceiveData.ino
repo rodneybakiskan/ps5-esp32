@@ -2,7 +2,7 @@
 
 void setup() {
   Serial.begin(921600);
-  ps5.begin("1a:2b:3c:01:01:01"); //replace with your MAC address
+  ps5.begin("1a:2b:3c:01:01:01"); //replace with MAC address of your controller
   Serial.println("Ready.");
 }
 
