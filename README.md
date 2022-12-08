@@ -25,10 +25,6 @@ The instructions on how to do this are base off what can be found [here](https:/
     1. Select "Download Zip" (It's always a good idea to look through the code on this page first to make sure you know what you're downloading)
     1. In the Arduino IDE, navigate to `Sketch -> Include Library -> Add .ZIP Library`, then select the file you just downloaded
 
-```diff
--_If you get a compilation error similar to too few arguments to function 'esp_bt_gap_set_scan_mode'. 
--Remove the comments in line 86-90 in file ps5_spp.c. This changes based on ESP-IDF version compatibility._
-```
 
 ## Pairing the ps5 Controller:
 When a ps5 controller is 'paired' to a ps5 console, it just means that it has stored the console's Bluetooth MAC address, which is the only device the controller will connect to. Usually, this pairing happens when you connect the controller to the ps5 console using a USB cable, and press the PS button. This initiates writing the console's MAC address to the controller.
@@ -46,6 +42,6 @@ void setup()
 }
 ```
 
-**TLDR:** Connect ps5 controller with phone through bluetooth. Get phone's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your phones bluetooh MAC. Same can be done with your ps5 console if more convenient.
+**TLDR:** Connect ps5 controller with phone through bluetooth. Get phone's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your phone's bluetooh MAC. Same can be done with your ps5 console if more convenient.
 ##
 **Note: Only buttons and analog inputs have been tested. Other functions like rumble/lights/IMU might not work, but could possibly be implemented using the 'ps5ViewIncomingBits.ino' example.**
