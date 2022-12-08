@@ -49,14 +49,23 @@ bool ps5Controller::begin(const char* mac) {
     return false;
   }
 
-  ps5SetBluetoothMacAddress(addr);
+  ps5_l2cap_connect(addr);
+  // ps5SetBluetoothMacAddress(addr);
 
   return begin();
 }
 
 void ps5Controller::end() {}
 
-bool ps5Controller::isConnected() { return ps5IsConnected(); }
+bool ps5Controller::isConnected() {
+  auto connected = ps5IsConnected();
+  static unsigned long tryReconnectAt = 0;
+  if (!connected && millis() - tryReconnectAt > 5000UL) {
+    tryReconnectAt = millis();
+    ps5_l2cap_reconnect();
+  }
+  return connected;
+}
 
 void ps5Controller::setLed(uint8_t r, uint8_t g, uint8_t b) {
   output.r = r;

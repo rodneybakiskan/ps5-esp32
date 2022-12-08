@@ -144,5 +144,7 @@ void ps5SetEventObjectCallback(void* object, ps5_event_object_callback_t cb);
 void ps5SetLed(uint8_t r, uint8_t g, uint8_t b);
 void ps5SetOutput(ps5_cmd_t prev_cmd);
 void ps5SetBluetoothMacAddress(const uint8_t* mac);
+long ps5_l2cap_connect(uint8_t addr[6]);
+long ps5_l2cap_reconnect(void);
 
 #endif
