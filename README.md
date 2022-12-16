@@ -27,13 +27,9 @@ The instructions on how to do this are base off what can be found [here](https:/
 
 
 ## Pairing the ps5 Controller:
-When a ps5 controller is 'paired' to a ps5 console, it just means that it has stored the console's Bluetooth MAC address, which is the only device the controller will connect to. Usually, this pairing happens when you connect the controller to the ps5 console using a USB cable, and press the PS button. This initiates writing the console's MAC address to the controller.
+When a ps5 controller is 'paired' to a ps5 console, it just means that it has stored the console's Bluetooth MAC address, which is the only device the controller will connect to. Usually, this pairing happens when you connect the controller to the ps5 console using a USB cable, and press the PS button. This initiates writing the console's (or in this case an esp32's) MAC address to the controller.
 
-Therefore, if you want to connect your ps5 controller to the ESP32, you either need to figure out what the Bluetooth MAC address of your ps5 console is and set the ESP32's address to it, or change the MAC address stored in the ps5 controller.
-
-Whichever path you choose, you might want a tool to read and/or write the currently paired MAC address from the ps5 controller. You can try using [sixaxispairer](https://github.com/user-none/sixaxispairer) for this purpose.
-
-If you opted to change the ESP32's MAC address, you'll need to include the ip address in the ```ps5.begin()``` function during within the ```setup()``` Arduino function like below where ```1a:2b:3c:01:01:01``` is the MAC address (**note that MAC address must be unicast**):
+To do this, you'll need to include the controller's ip address in the ```ps5.begin()``` function during within the ```setup()``` Arduino function like below where ```1a:2b:3c:01:01:01``` is the MAC address (**note that MAC address must be unicast**):
 ```
 void setup()
 {
@@ -42,6 +38,6 @@ void setup()
 }
 ```
 
-**TLDR:** Connect ps5 controller with phone through bluetooth. Get phone's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your phone's bluetooh MAC. Same can be done with your ps5 console if more convenient.
+**TLDR:** Connect ps5 controller with phone through bluetooth. Get the controller's bluetooth MAC address (look in About settings of phone). Replace '1a:2b:3c:01:01:01' with your controller's bluetooh MAC. Same can be done with your ps5 console if more convenient.
 ##
 **Note: Only buttons and analog inputs have been tested. Other functions like rumble/lights/IMU might not work, but could possibly be implemented using the 'ps5ViewIncomingBits.ino' example.**
