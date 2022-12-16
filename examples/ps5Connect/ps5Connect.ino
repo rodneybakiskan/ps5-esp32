@@ -3,10 +3,7 @@
 void setup() {
   Serial.begin(115200);
 
-  // Replace the "1a:2b:3c:01:01:01" with the MAC address
-  // the controller wants to pair to
-  // Note: MAC address must be unicast
-  ps5.begin("1a:2b:3c:01:01:01");
+  ps5.begin("1a:2b:3c:01:01:01"); //replace with MAC address of your controller
   Serial.println("Ready.");
 }
 
